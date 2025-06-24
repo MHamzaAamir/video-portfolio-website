@@ -6,9 +6,9 @@ import { useState } from 'react'
 
 const links = [
   { title: "About Us", url: "#about" },
-  { title: "Work", url: "/" },
-  { title: "Services", url: "/" },
-  { title: "Pricing", url: "/" },
+  { title: "Work", url: "#works" },
+  { title: "Services", url: "#services" },
+  { title: "Pricing", url: "#pricing" },
   { title: "FAQs", url: "#faq" },
 ]
 

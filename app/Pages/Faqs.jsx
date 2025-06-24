@@ -36,12 +36,12 @@ const Faqs = () => {
 
 
     return (
-        <div id="faq" className="flex flex-col justify-center items-center py-16 gap-10">
-            <div className='text-3xl md:text-4xl lg:text-6xl font-bold max-w-[700px] text-center px-4'>Frequently Asked Questions</div>
+        <div id="faq" className="flex flex-col justify-center items-center py-24 gap-10">
+            <div className='text-3xl md:text-4xl lg:text-6xl font-bold max-w-[700px] text-center px-4'>Frequently <span className='text-blue-600 italic'>Asked</span> Questions</div>
             <div className="flex flex-col justify-center items-center w-[60%] max-w-[600px]">
             {
                 faqs.map((faq, i) => (
-                    <div onClick={() => toggleFAQ(i)} key={i} className="w-full px-4 py-4 bg-[#202020] border-b-1 outline-white cursor-pointer select-none">
+                    <div onClick={() => toggleFAQ(i)} key={i} className="w-full px-4 py-4 outline-1 outline-gray-900 cursor-pointer select-none">
                         <div>Q. {faq.question}</div>
                         <AnimatePresence initial={false}>
                             {openIndexes[i] && (
@@ -64,6 +64,7 @@ const Faqs = () => {
                 ))
             }
             </div>
+
         </div>
     )
 }

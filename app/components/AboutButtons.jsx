@@ -1,5 +1,6 @@
 "use client"
-import {easeOut, motion} from "motion/react"
+import { motion} from "motion/react"
+
 
 const AboutButtons = () => {
   return (
@@ -16,7 +17,7 @@ const AboutButtons = () => {
         >
             Hire Me
         </motion.button>
-        <motion.button className='px-4 py-3 rounded-[8px] cursor-pointer'
+        <motion.button className='px-4 py-3 gap-1 flex rounded-[8px] cursor-pointer'
         whileHover={{
             boxShadow: "0 0 0 4px rgba(50, 50, 50, 0.7)",
             transition: {
@@ -25,7 +26,7 @@ const AboutButtons = () => {
             }
         }}
         >
-            Learn More
+            Learn More 
         </motion.button>
     </div>
 

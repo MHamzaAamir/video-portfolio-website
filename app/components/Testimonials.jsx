@@ -10,7 +10,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="flex flex-col md:flex-row  gap-10 justify-center items-center">
+    <div id="testimonials" className="flex flex-col md:flex-row  gap-10 justify-center items-center">
       {
         testimonials.map((testimonial,i) => (
           <TestimonialCard key={i} testimonial={testimonial} index={i} />

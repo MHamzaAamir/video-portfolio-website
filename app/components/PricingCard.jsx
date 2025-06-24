@@ -1,18 +1,26 @@
 
-const PricingCard = ({p}) => {
+const PricingCard = ({ p }) => {
   return (
-    <div className="h-[410px] w-[250px] xl:h-[470px] xl:w-[300px] py-7 px-3 gap-7 rounded-2xl hover:scale-105 duration-200 bg-[#202020] hover:bg-white hover:text-black select-none outline-1 outline-white">
-        <div className="text-xl xl:text-3xl text-center mb-7 px-4">{p.name}</div>
-        <div className="text-center text-base xl:text-xl mb-7">{p.price} {p.billing}</div>
-        <div className="px-4 py-4 text-sm xl:text-base flex flex-col border-t-2">
-          <div className="font-semibold mb-2">Features:</div>
+    <>
+      <div className="relative overflow-hidden h-[410px] py-2 px-2 w-[250px] xl:h-[470px] xl:w-[300px] rounded-2xl hover:scale-105 duration-200 select-none outline-1 outline-gray-900 ">
+        <div className="absolute top-0 -left-10 rounded-full h-20 w-20 bg-blue-600 blur-3xl" ></div>
+        <div className="absolute bottom-0 -right-10 rounded-full h-20 w-20 bg-blue-600 blur-3xl" ></div>
+        <div className="h-3/12 flex items-center justify-center">
+          <div className="text-xl xl:text-2xl text-center">{p.name}</div>
+        </div>
+        <div className="h-3/12 py-2.5 flex flex-col items-center">
+          <div className="text-5xl font-bold">{p.price}</div>
+          <div>{p.billing}</div>
+        </div>
+        <div className="h-6/12">
           <ul className="list-disc ml-6">
             {p.features.map((feature, i) => (
               <li key={i}>{feature}</li>
             ))}
           </ul>
         </div>
-    </div>
+      </div>
+    </>
   )
 }
 
