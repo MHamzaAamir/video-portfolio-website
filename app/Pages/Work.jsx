@@ -1,29 +1,22 @@
-import React from 'react'
-
+import Video from "@/models/Work"
 import VideoBox from '../components/VideoBox'
+import dbConnect from "@/lib/mongodb"; 
 
-const links1 = [
-  "https://www.youtube.com/embed/XCsV1djBu24?si=JZsvNFC1XqR5V-Ty",
-  "https://www.youtube.com/embed/1BluDplle_8?si=JZsvNFC1XqR5V-Ty",
-  "https://www.youtube.com/embed/Tq2pZHP-AmA?si=JZsvNFC1XqR5V-Ty",
-  "https://www.youtube.com/embed/L5YFtfsYCc8?si=JZsvNFC1XqR5V-Ty",
-]
+let links1 = [], links2 = [], links3 = [];
 
-const links2 = [
-  "https://www.youtube.com/embed/Q2BuOFrthIE?si=3xLqgHqqM2A8FdDT",
-  "https://www.youtube.com/embed/F8Yfc0YecV0?si=3xLqgHqqM2A8FdDT",
-  "https://www.youtube.com/embed/rCTg7OIAcTU?si=3xLqgHqqM2A8FdDT",
-  "https://www.youtube.com/embed/6lvqoaTBLeQ?si=3xLqgHqqM2A8FdDT",
-]
 
-const links3 = [
-  "https://www.youtube.com/embed/CP3yQa-pSBw?si=3xLqgHqqM2A8FdDT",
-  "https://www.youtube.com/embed/GMlsFk0Augg?si=3xLqgHqqM2A8FdDT",
-  "https://www.youtube.com/embed/_wJGrlAhqs4?si=3xLqgHqqM2A8FdDT",
-  "https://www.youtube.com/embed/0V3DPS8yLYc?si=3xLqgHqqM2A8FdDT",
-]
+const Work = async () => {
+  await dbConnect()
 
-const Work = () => {
+  const videos = await Video.find({})
+  videos.forEach(({ type, videos }) => {
+    const embedLinks = videos.map(id => `https://www.youtube.com/embed/${id}?si=3xLqgHqqM2A8FdDT`);
+    
+    if (type === "short") links1 = embedLinks;
+    if (type === "long") links2 = embedLinks;
+    if (type === "vsl") links3 = embedLinks;
+  });
+
   return (
     <div id = "works">
       <div className='py-20 w-screen flex flex-col gap-10 justify-center items-center'>
