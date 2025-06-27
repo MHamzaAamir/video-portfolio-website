@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Video Editing Agency Web App
+
+This is a Next.js application built for a video editing agency. The project provides a professional landing page and a secure admin panel for managing packages, video links, FAQs, and more. Both the frontend and backend are powered by Next.js, styled with TailwindCSS, and deployed on Vercel.
+
+## Live Demo
+
+The app is live at [https://thepremieredits.com](https://thepremieredits.com)  
+You can view the client-facing landing page there.
+
+---
+
+## Features
+
+- **Landing Page** (`/`): Public-facing site for clients to view services, pricing, testimonials, and contact information.
+- **Admin Panel** (`/admin`): Secure dashboard for the agency to manage content such as packages, video links, and FAQs.
+- **Authentication**: JWT-based authentication for admin access.
+- **Database**: Uses MongoDB for persistent data storage.
+- **Styling**: Built with TailwindCSS for fast and responsive design.
+- **Deployment**: Ready to deploy on Vercel.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
+
+```bash
+https://github.com/MHamzaAamir/video-portfolio-website.git
+cd video-portfolio-website
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment Variables
+
+Create a `.env.local` file in the root directory and add the following variables:
+
+```env
+# MongoDB connection string
+MONGODB_URI=your_mongodb_connection_string
+
+# Secret key for JWT authentication
+JWT_SECRET=your_super_secret_jwt_key
+```
+
+**Note:**  
+- Replace `your_mongodb_connection_string` with your actual MongoDB URI.
+- Replace `your_super_secret_jwt_key` with a strong, random string.
+
+### 4. Admin Account Setup
+
+To log in to the `/admin` panel, you need at least one admin account in your MongoDB database.  
+Create a document in the `admins` collection with the following structure:
+
+```json
+{
+  "username": "your_admin_username",
+  "passwordHash": "bcrypt_hashed_password"
+}
+```
+- The `passwordHash` field must contain a password hashed using [bcrypt](https://www.npmjs.com/package/bcrypt).
+- You can generate a bcrypt hash using a Node.js script or an online tool. Example with Node.js:
+  ```js
+  const bcrypt = require('bcrypt');
+  const password = 'your_plaintext_password';
+  bcrypt.hash(password, 10).then(console.log);
+  ```
+- Insert the resulting document into your `admins` collection using MongoDB Compass or Atlas.
+
+### 5. Running the App Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Landing Page:** [http://localhost:3000/](http://localhost:3000/)
+- **Admin Panel:** [http://localhost:3000/admin](http://localhost:3000/admin)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This app is ready to deploy on [Vercel](https://vercel.com/):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your code to GitHub, GitLab, or Bitbucket.
+2. Import your repository into Vercel.
+3. Set the environment variables `MONGODB_URI` and `JWT_SECRET` in your Vercel project dashboard.
+4. Deploy!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
