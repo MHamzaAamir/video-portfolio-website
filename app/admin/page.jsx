@@ -6,9 +6,6 @@ import Login from './pages/Login';
 
 export default async function Home() {
 
-
-
-
   const cookieStore = await cookies();
   const token = cookieStore.get('token')?.value;
 

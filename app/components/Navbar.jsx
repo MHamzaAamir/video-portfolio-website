@@ -4,6 +4,9 @@ import { motion } from "motion/react"
 
 import { useState } from 'react'
 
+
+
+
 const links = [
   { title: "About Us", url: "#about" },
   { title: "Work", url: "#works" },
@@ -44,7 +47,7 @@ const navVariants = {
     y: 0
   },
   closed: {
-    y: "-220px"
+    y: "-260px"
   }
 }
 
@@ -55,10 +58,12 @@ const toggle = () => {
 }
 
 const Navbar = () => {
+
   const [open, setOpen] = useState(false)
+
+
   return (
     <>
-
       <motion.div className='hidden md:flex h-16 w-screen z-50 fixed top-10 justify-center items-center'
         initial={{
           y: -100
@@ -89,29 +94,24 @@ const Navbar = () => {
               }
             }}
           >
-            <Link href="/">Hire Me</Link>
+            <Link href={"#contact"}>Hire Me</Link>
           </motion.div>
         </div>
       </motion.div>
 
-      <motion.div className='h-72 w-full flex md:hidden flex-col justify-between fixed top-0 backdrop-blur-md backdrop-saturate-150 shadow-md'
-        initial={{ y: "-220px" }}
+      <motion.div className='w-full flex md:hidden flex-col fixed top-0 z-50 backdrop-blur-md backdrop-saturate-150 shadow-md'
+        initial={{ y: "-260px" }}
         animate={open ? "opened" : "closed"}
         variants={navVariants}
       >
         <div className='flex flex-col items-center justify-center py-4'>
           {links.map((link) => (
-            <motion.div className='rounded-xl py-2 px-3' key={link.title}
-              whileHover={{
-                backgroundColor: "rgb(44, 44, 44)"
-              }}
-            >
-              <Link href={link.url}>{link.title}</Link>
-            </motion.div>
+            <Link key={link.title} className='rounded-xl py-2 px-3' href={link.url}>{link.title}</Link>
           ))}
+          <Link href={"#contact"} className='rounded-xl py-2 px-3'>Hire Me</Link>
         </div>
 
-        <motion.div className='w-full h-20 px-4 flex justify-end items-center'>
+        <motion.div className='w-full py-4 px-4 flex justify-end items-center'>
           <button className="h-[16px] w-[18px] flex flex-col items-center justify-between" onClick={() => setOpen(!open)}>
             <motion.span animate={open ? "opened" : "closed"} variants={topVariants} className="bg-white h-1 w-full origin-left"></motion.span>
             <motion.span animate={open ? "opened" : "closed"} variants={centerVariants} className="bg-white h-1 w-full origin-left"></motion.span>
@@ -119,9 +119,7 @@ const Navbar = () => {
           </button>
         </motion.div>
       </motion.div>
-
     </>
-
   )
 }
 

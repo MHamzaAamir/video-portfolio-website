@@ -1,10 +1,10 @@
 export const dynamic = "force-dynamic";
-import About from "./Pages/About";
-import Work from "./Pages/Work";
-import Services from "./Pages/Services";
-import Pricing from "./Pages/Pricing";
-import Faqs from "./Pages/Faqs";
-import Contact from "./Pages/Contact";
+import About from "./Sections/About";
+import Work from "./Sections/Work";
+import Services from "./Sections/Services";
+import Pricing from "./Sections/Pricing";
+import Faqs from "./Sections/Faqs";
+import Contact from "./Sections/Contact";
 import Navbar from "./components/Navbar";
 
 export default function Home() {

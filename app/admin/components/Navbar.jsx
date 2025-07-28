@@ -10,7 +10,7 @@ const links = [
 const Navbar = ({setPage}) => {
   return (
     <>
-      <div className='flex h-16 w-screen z-50 fixed top-10 justify-center items-center'>
+      <div className='flex h-16 w-screen z-40 fixed top-10 justify-center items-center'>
         <div className='flex justify-center items-center h-full rounded-xl outline-1 outline-[#1B1B1B] px-8 py-3 backdrop-blur-md backdrop-saturate-150 shadow-md' >
           <div className='flex'>
             {
