@@ -1,4 +1,3 @@
-import TestimonialCard from "./TestimonialCard";
 
 
 const testimonials = [
