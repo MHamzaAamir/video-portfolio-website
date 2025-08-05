@@ -5,8 +5,11 @@ import { useState } from "react"
 
 const ContactForm = () => {
 
+
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    setSendingMessage("Sending ...")
 
     const res = await fetch('/api/email', {
       method: 'POST',
@@ -15,8 +18,18 @@ const ContactForm = () => {
     })
 
     const data = await res.json()
-    setPopup(data.message)
 
+    if(res.ok){
+      setPopup(data.message)
+      setFirstName("")
+      setLastName("")
+      setMessage("")
+      setEmail("")
+    }else{
+      setPopup("Failed")
+    }
+
+    setSendingMessage("")
   }
 
   const [firstname, setFirstName] = useState("")
@@ -24,6 +37,7 @@ const ContactForm = () => {
   const [message, setMessage] = useState("")
   const [email, setEmail] = useState("")
   const [popupMessage, setPopup] = useState("")
+  const [sendingMessage,setSendingMessage] = useState("")
 
   return (
     <>
@@ -35,6 +49,7 @@ const ContactForm = () => {
         <input className="outline-1 outline-gray-900 w-full px-2 py-3 rounded-[5px] bg-black text-white" value={email} onChange={e => setEmail(e.target.value)} type="email" required placeholder="Your Email" />
         <textarea className="outline-1 outline-gray-900 w-full resize-none px-2 py-3 rounded-[5px] bg-black text-white" value={message} onChange={e => setMessage(e.target.value)} name="message" required placeholder="Your Message" rows={5} />
         <button type="submit" className="bg-blue-600  py-2 px-3 rounded-xl hover:scale-105 duration-200 cursor-pointer">Submit</button>
+        <div className="h-[20px]">{sendingMessage}</div>
       </form>
       {popupMessage && (
           <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/60">

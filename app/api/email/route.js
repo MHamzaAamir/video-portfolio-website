@@ -20,7 +20,6 @@ export async function POST(req) {
       padding: 20px;
       border: 1px solid #eee;
       border-radius: 8px;
-      color: #333;
     `;
 
     
@@ -51,8 +50,8 @@ export async function POST(req) {
           <h4 style="color: #555;">Here's a copy of your message:</h4>
           <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #4CAF50; white-space: pre-wrap;">${message}</div>
 
-          <p style="margin-top: 30px;">Looking forward to connecting with you.<br>Best regards,</p>
-          <p><strong>${process.env.myname}</strong>
+          <p style="margin-top: 30px;">Looking forward to connecting with you.</p>
+          <p>Best Regards,<br><strong>${process.env.myname}</strong>
         </div>
       `,
     };
