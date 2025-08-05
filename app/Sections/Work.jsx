@@ -10,7 +10,7 @@ const Work = async () => {
 
   const videos = await Video.find({})
   videos.forEach(({ type, videos }) => {
-    const embedLinks = videos.map(id => `https://www.youtube.com/embed/${id}?si=3xLqgHqqM2A8FdDT`);
+    const embedLinks = videos.map(id => `https://www.youtube.com/embed/${id}`);
     
     if (type === "short") links1 = embedLinks;
     if (type === "long") links2 = embedLinks;
