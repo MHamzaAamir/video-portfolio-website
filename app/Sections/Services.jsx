@@ -11,7 +11,7 @@ const Services = () => {
                             <div className="text-2xl md:text-3xl font-bold text-center">Long Form Editing</div>
                         </div>
                         <div className="h-1/2 px-10">
-                            <div className="text-xs sm:text-sm text-gray-300 text-center">We will both help you to create high rentantion content for youtube to take your brand on next level</div>
+                            <div className="text-xs sm:text-sm text-gray-300 text-center">We will help you to create high rentantion content for youtube to take your brand on next level</div>
                         </div>
                     </div>
                     <div className="hover:scale-[102%] duration-200 relative overflow-hidden py-7 px-3 h-[210px] w-full md:w-1/2 flex flex-col rounded-2xl outline-1 outline-gray-900">
@@ -20,7 +20,7 @@ const Services = () => {
                             <div className="text-2xl md:text-3xl font-bold text-center">Short Form Editing</div>
                         </div>
                         <div className="h-1/2 px-10">
-                            <div className="text-xs sm:text-sm text-gray-300 text-center">We will both help you to create high rentantion reel for Instagram & Tiktok to take your brand on next level</div>
+                            <div className="text-xs sm:text-sm text-gray-300 text-center">We will help you to create high rentantion reel for Instagram & Tiktok to take your brand on next level</div>
                         </div>
                     </div>
                 </div>
