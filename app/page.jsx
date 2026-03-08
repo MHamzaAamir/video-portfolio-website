@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 import About from "./Sections/About";
 import Work from "./Sections/Work";
 import Services from "./Sections/Services";

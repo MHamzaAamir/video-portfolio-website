@@ -23,7 +23,7 @@ export async function PATCH (req){
 export async function POST (req){
 
     try{
-        await verifyAuth()
+        // await verifyAuth()
         await dbConnect()
     
         const {type,videos} = await req.json()

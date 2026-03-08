@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const videoSchema = new mongoose.Schema({
   type: {
     type: String,
-    enum: ['short', 'long', 'vsl'],
+    enum: ['short', 'long', 'vsl','podcast','speakerdemo'],
     required: true,
     unique: true 
   },
