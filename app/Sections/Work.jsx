@@ -21,7 +21,7 @@ const Work = async () => {
 
   return (
     <div id = "works">
-      {/* <div className='py-20 w-screen flex flex-col gap-10 justify-center items-center'>
+      <div className='py-20 w-screen flex flex-col gap-10 justify-center items-center'>
         <div className='text-3xl md:text-4xl lg:text-6xl font-bold max-w-[700px] text-center px-4 mt-7'>Speaker <span className='text-blue-600 italic'>demo</span> reels</div>
         <div className='text-gray-300 text-sm sm:text-base md:text-base lg:text-xl max-w-[700px] text-center px-4'>Compelling speaker demo reels that showcase your best moments and help you stand out to event organizers, audiences, and booking agencies.</div>
         <VideoBox links={links1}/>
@@ -30,7 +30,7 @@ const Work = async () => {
         <div className='text-3xl md:text-4xl lg:text-6xl font-bold max-w-[700px] text-center px-4 mt-7'>Podcasts <span className='text-blue-600 italic'>done</span> right</div>
         <div className='text-gray-300 text-sm sm:text-base md:text-base lg:text-xl max-w-[700px] text-center px-4'>Professional podcast editing that turns your conversations into polished episodes and engaging short clips ready for YouTube and social media.</div>
         <VideoBox links={links2}/>
-      </div> */}
+      </div>
       <div className='py-20 w-screen flex flex-col gap-10 justify-center items-center'>
         <div className='text-3xl md:text-4xl lg:text-6xl font-bold max-w-[700px] text-center px-4 mt-7'>Short form <span className='text-blue-600 italic'>editing</span> work</div>
         <div className='text-gray-300 text-sm sm:text-base md:text-base lg:text-xl max-w-[700px] text-center px-4'>Having worked with Speakers, Entreprenuers, Ecom Coaches across a number of Industries. Here ARE our best Short form editing works. Have a look</div>
